@@ -6,6 +6,12 @@ const bodyParser = require('body-parser')
 const colors = require('colors')
 const app = express()
 const PORT = process.env.PORT || 8080
+const connectDB = require('./config/db');
+
+
+//mongo connection
+connectDB();
+
 
 //middleware
 app.use(cors())
