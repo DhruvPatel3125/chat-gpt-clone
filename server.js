@@ -6,7 +6,15 @@ const bodyParser = require('body-parser')
 const colors = require('colors')
 const app = express()
 const PORT = process.env.PORT || 8080
+
+//api routs
+app.use('/api/v1/auth',authRoutes)
+
 const connectDB = require('./config/db');
+
+//routs path
+
+const authRoutes = require('./routes/authRoutes')
 
 
 //mongo connection
