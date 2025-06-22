@@ -7,6 +7,8 @@ const colors = require('colors')
 const app = express()
 const PORT = process.env.PORT || 8080
 const errorHandler = require('./middlewares/errorMiddleware');
+const authRoutes = require('./routes/authRoutes');
+
 
 //api routs
 app.use('/api/v1/auth',authRoutes)
@@ -15,7 +17,6 @@ const connectDB = require('./config/db');
 
 //routs path
 
-const authRoutes = require('./routes/authRoutes');
 
 
 //mongo connection
