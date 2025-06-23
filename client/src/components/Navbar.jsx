@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Link, Typography, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   const theme = useTheme();
