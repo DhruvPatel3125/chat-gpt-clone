@@ -24,23 +24,27 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-const handleSubmit = async(e) =>{
-  e.preventDefault()
+const handleSubmit = async (e) => {
+  e.preventDefault();
   try {
-    const {data} = await axios.post('/api/v1/auth/register',{username,email,password})
-    toast.success('User Register Successfully')
-    navigate('/login')
+    const { data } = await axios.post('/api/v1/auth/register', { username, email, password });
+    toast.success('User Register Successfully');
+    navigate('/login');
   } catch (error) {
-    console.log(error)
-    if(error.response.data.error){
-      setError(error.response.data.error)
+    console.log(error);
+    if (error.response?.data?.error) {
+      setError(error.response.data.error);
+    } else if (error.message) {
+      setError(error.message);
+    } else {
+      setError("Something went wrong");
     }
-    else if(error.message){
-      setError(error.message)
-    }
-    setTimeout(() =>{setError},5000)
+
+    setTimeout(() => {
+      setError("");
+    }, 5000);
   }
-}
+};
 
   return (
     <Box

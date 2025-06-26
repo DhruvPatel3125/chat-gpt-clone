@@ -1,4 +1,3 @@
-
 export const colorTokens = {
   grey: {
     0: "#FFFFFF",
@@ -29,7 +28,7 @@ export const colorTokens = {
   },
 };
 
-export const themeSettings = (mode) => {
+export const themeSettings = () => {
   return {
     palette: {
       primary: {
